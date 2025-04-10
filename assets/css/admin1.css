@@ -1,0 +1,294 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.sidebar {
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #1f2937; 
+    padding: 20px;
+    color: white;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #c7c7c7;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    
+}
+
+.sidebar a:hover {
+    background-color: #34495e;
+}
+
+.sidebar a.active {
+    background-color: #34495e; /* Màu nền khi mục được chọn */
+    color: white;
+}
+
+.content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.starts {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.start-box {
+    flex: 1;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    height: 120px;
+    width: 50px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.container .mb-3 {
+    flex: 1;
+}
+
+.container .form-select-lg,
+.container .form-control-lg {
+    height: 60px;
+    font-size: 16px;
+}
+
+.table-container, .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-container table, .table-responsive table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container th, .table-container td,
+.table-responsive th, .table-responsive td {
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+
+.table-container th, .table-responsive th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.sidebar {
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #1f2937; 
+    padding: 20px;
+    color: white;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #c7c7c7;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidebar a:hover {
+    background-color: #34495e;
+}
+
+.sidebar a.active {
+    background-color: #34495e; /* Màu nền khi mục được chọn */
+    color: white;
+}
+
+.content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.starts {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.start-box {
+    flex: 1;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    height: 120px;
+    width: 50px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.container .mb-3 {
+    flex: 1;
+}
+
+.container .form-select-lg,
+.container .form-control-lg {
+    height: 60px;
+    font-size: 16px;
+}
+
+.table-container, .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-container table, .table-responsive table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container th, .table-container td,
+.table-responsive th, .table-responsive td {
+    padding: 10px;
+    
+    text-align: left;
+}
+
+.table-container th, .table-responsive th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+/* Tùy chỉnh bảng trong phần Quản lý dịch vụ */
+.table-responsive {
+    margin-top: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 15px; /* Tăng padding để có khoảng cách hợp lý */
+    text-align: left; /* Căn trái nội dung */
+    vertical-align: middle; /* Căn giữa theo chiều dọc */
+    border-bottom: 1px solid #dee2e6; /* Đường viền dưới giống Bootstrap */
+}
+
+/* Tùy chỉnh cột Hình ảnh */
+.table td img {
+    width: 80px; /* Giảm kích thước hình ảnh */
+    height: 80px;
+    border-radius: 5px;
+    object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+    display: block;
+    margin: 0 ; /* Căn giữa hình ảnh */
+}
+
+/* Tùy chỉnh cột Thao tác */
+.table td .btn {
+    padding: 5px 10px; /* Giảm kích thước nút */
+    font-size: 14px; /* Giảm kích thước chữ */
+    border: none; /* Bỏ viền nút */
+    background: none; /* Bỏ nền mặc định */
+    text-decoration: none;
+}
+
+
+.table td .btn-warning {
+    color: blue; 
+    font-size: 19px;
+    
+}
+
+.table td .btn-danger {
+    color: red; 
+    font-size: 19px;
+}
+
+/* Đảm bảo tiêu đề bảng có nền sáng */
+.table thead th {
+    background-color: #f8f9fa; /* Nền sáng giống ảnh 2 */
+    font-weight: bold;
+    border:none;
+}
+
+.error {
+    color: red;
+   font-size: medium;
+    margin-top: 10px;
+}
+.edit-btn{
+    margin-right: 20px;
+    text-decoration: none;
+}
+.delete-btn{
+    text-decoration: none;
+}

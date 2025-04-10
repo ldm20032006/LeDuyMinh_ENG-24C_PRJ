@@ -1,0 +1,106 @@
+:root{
+    --bg-color: #1f2937;
+    --heading-color:#FFFFFF;
+    --text-color:#C7C7C7;
+    --font:"Inter";
+    --corner-radious: 12px;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: var(--font);
+    color:var(--text-color);
+    font-size:18px;
+}
+a {
+    text-decoration: none;
+}
+nav{
+    padding: 1px 60px;
+    background-color: var(--bg-color);
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .mobile-menu{
+    display:none;
+    justify-content: space-between;
+}
+nav .logo{
+    font-family: var(--font);
+    font-size: 32px;
+    text-transform: uppercase;
+    margin-top: 18px;
+}
+nav .desktop-menu{
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+nav .desktop-menu li{
+    margin-top: 18px;
+    color: var(--heading-color);
+    list-style-type: none;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+.title h2 {
+    font-weight: bold;
+}
+
+.table {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.table th,
+.table td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
+
+.modal-content {
+    border-radius: 8px;
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+}
+
+.form-label {
+    font-weight: 500;
+}
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
