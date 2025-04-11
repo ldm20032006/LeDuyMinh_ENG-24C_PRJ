@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/admin1.css">
 </head>
+
 <body>
     <div class="sidebar">
         <h2 style="font-weight: bold;">Admin Dashboard</h2>
@@ -45,7 +47,8 @@
         <div class="container">
             <div class="mb-3">
                 <label for="filterClassSelect" class="form-label" style="font-weight: bold;">Lớp học</label>
-                <select style="height: 60px;" class="form-select form-select-lg mb-3" id="filterClassSelect" aria-label="Small select example">
+                <select style="height: 60px;" class="form-select form-select-lg mb-3" id="filterClassSelect"
+                    aria-label="Small select example">
                     <option selected>Tất cả</option>
                     <option value="Gym">Gym</option>
                     <option value="Yoga">Yoga</option>
@@ -54,11 +57,13 @@
             </div>
             <div class="mb-3">
                 <label for="emailFilter" class="form-label" style="font-weight: bold;">Email</label>
-                <input class="form-control form-control-lg" type="email" id="emailFilter" placeholder="Tìm theo email" aria-label=".form-control-lg example">
+                <input class="form-control form-control-lg" type="email" id="emailFilter" placeholder="Tìm theo email"
+                    aria-label=".form-control-lg example">
             </div>
             <div class="mb-3">
                 <label for="dateFilter" class="form-label" style="font-weight: bold;">Ngày</label>
-                <input class="form-control form-control-lg" type="date" id="dateFilter" aria-label=".form-control-lg example">
+                <input class="form-control form-control-lg" type="date" id="dateFilter"
+                    aria-label=".form-control-lg example">
             </div>
         </div>
         <div class="table-container">
@@ -80,53 +85,53 @@
             </table>
         </div>
         <!-- Nút "Đặt lịch mới" -->
-        <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#bookingModal">Đặt lịch mới</button>
+        <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#bookingModal">Đặt
+            lịch mới</button>
     </div>
 
 
-     <div class="content" id="services" style="display: none;">
+    <div class="content" id="services" style="display: none;">
         <div class="title">
             <h2 style="color: #000000; font-weight: bold;">Quản lý dịch vụ</h2>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addServiceModal">
                 Thêm dịch vụ mới
             </button>
         </div>
-        <!-- Modal Thêm Dịch Vụ -->
+        <!-- Modal Thêm/Sửa dịch vụ -->
         <div class="modal fade" id="addServiceModal" tabindex="-1" aria-labelledby="addServiceModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addServiceModalLabel"><strong>Thêm dịch vụ mới</strong></h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                        <h5 class="modal-title" id="addServiceModalLabel">Thêm dịch vụ mới</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form id="serviceForm">
                             <div class="mb-3">
                                 <label for="serviceName" class="form-label">Tên dịch vụ</label>
                                 <input type="text" class="form-control" id="serviceName">
-                                <div class="error" id="checkName"></div>
+                                <div id="checkName" class="text-danger"></div>
                             </div>
                             <div class="mb-3">
                                 <label for="serviceDescription" class="form-label">Mô tả</label>
-                                <textarea class="form-control" id="serviceDescription" rows="3"></textarea>
-                                <div class="error" id="checkDes"></div>
+                                <textarea class="form-control" id="serviceDescription"></textarea>
+                                <div id="checkDes" class="text-danger"></div>
                             </div>
                             <div class="mb-3">
-                                <label for="serviceImage" class="form-label">URL Hình ảnh</label>
-                                <input type="text" class="form-control" id="serviceImage"/>
-                                <div class="error" id="checkImg"></div>
+                                <label for="serviceImage" class="form-label">Link ảnh</label>
+                                <input type="text" class="form-control" id="serviceImage">
+                                <div id="checkImg" class="text-danger"></div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                        <button type="button" class="btn btn-primary" onclick="saveService()">Lưu</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-primary" id="saveServiceButton">Lưu</button>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="table-responsive">
             <table class="table">
                 <thead class="table-light" style="font-size: 20px;">
@@ -236,4 +241,5 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../assets/js/admin1.js"></script>
 </body>
+
 </html>
