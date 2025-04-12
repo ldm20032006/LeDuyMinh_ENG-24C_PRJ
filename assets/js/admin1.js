@@ -13,10 +13,19 @@ document.addEventListener("DOMContentLoaded", function () {
         return usersData ? JSON.parse(usersData) : [];
     }
 
-    // Hàm kiểm tra xem "Họ và tên" và "Email" có khớp với một user hay không
-    function isValidUser(name, email) {
+    // Hàm kiểm tra xem "Họ và tên" và "Email" có khớp với một user đã tồn tại hay không
+    function isValidUser(name, email, checkName, checkEmail) {
         const users = getAllUsers();
-        return users.some(user => user.name === name && user.email === email);
+        const user = users.find(user => user.email === email);
+        if (!user) {
+            checkEmail.innerHTML = "Email không tồn tại";
+            return false;
+        }
+        if (user.name !== name) {
+            checkName.innerHTML = "Họ và tên không khớp với email";
+            return false;
+        }
+        return true;
     }
 
     // Hàm lấy tất cả lịch tập từ localStorage (tổng hợp từ tất cả người dùng)
@@ -186,11 +195,9 @@ document.addEventListener("DOMContentLoaded", function () {
             isValid = false;
         }
     
-        // Validate User (Họ và tên và Email phải khớp với một user đã tồn tại)
-        if (nameValue !== "" && emailValue !== "") {
-            if (!isValidUser(nameValue, emailValue)) {
-                checkName.innerHTML = "Tên tài khoản hoặc email không tồn tại";
-                checkEmail.innerHTML = "Tên tài khoản hoặc email không tồn tại";
+        // Validate User (Họ và tên và Email phải khớp với một user đã đăng ký)
+        if (nameValue !== "" && emailValue !== "" && isValidEmail(emailValue)) {
+            if (!isValidUser(nameValue, emailValue, checkName, checkEmail)) {
                 isValid = false;
             }
         }
@@ -501,9 +508,30 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Hàm khởi tạo danh sách dịch vụ
+    // Hàm khởi tạo danh sách dịch vụ với 3 dịch vụ mặc định
     function initializeServices() {
-        const services = getAllServices();
+        let services = getAllServices();
+        // Nếu không có dữ liệu dịch vụ trong localStorage, khởi tạo 3 dịch vụ mặc định
+        if (services.length === 0) {
+            services = [
+                {
+                    name: "Gym",
+                    description: "Lớp tập Gym giúp tăng cường sức mạnh và thể lực",
+                    imageUrl: "https://example.com/gym.jpg"
+                },
+                {
+                    name: "Yoga",
+                    description: "Lớp tập Yoga giúp thư giãn và cải thiện sự linh hoạt",
+                    imageUrl: "https://example.com/yoga.jpg"
+                },
+                {
+                    name: "Zumba",
+                    description: "Lớp tập Zumba kết hợp âm nhạc và vũ đạo để đốt cháy calo",
+                    imageUrl: "https://example.com/zumba.jpg"
+                }
+            ];
+            saveAllServices(services);
+        }
         displayServices(services);
     }
 
